@@ -26,9 +26,14 @@ nx.draw_networkx_nodes(G, pos,
 nx.draw_networkx_edges(G, pos, alpha=0.3)
 
 plt.title("Social Network Graph Communities")
+
+# Save graph image
+plt.savefig("images/graph_output.png", dpi=300)
+
+# Show graph
 plt.show()
 
-
+# Influential user detection
 degree = nx.degree_centrality(G)
 
 top_users = sorted(degree.items(), key=lambda x: x[1], reverse=True)[:5]
